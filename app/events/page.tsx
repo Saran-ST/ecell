@@ -1,8 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Users } from "lucide-react"
-
-// Event data
 const events = [
   {
     id: 1,
