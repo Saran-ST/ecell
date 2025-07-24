@@ -19,7 +19,7 @@ const events = [
     title: "Startup Pitch Competition",
     category: "Competition",
     description:
-      "Students presented their innovative startup ideas to a panel of judges from the industry. Cash prizes and mentorship opportunities were awarded.",
+      "Students presented their innovative startup ideas to the panel of judges from the industry. Cash prizes and mentorship opportunities were awarded.",
     date: "February 28, 2023",
     location: "Seminar Hall, SVCE",
     participants: "50 Teams",
