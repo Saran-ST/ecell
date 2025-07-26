@@ -1,12 +1,17 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
+import emailjs from "emailjs-com"
+
+// ✅ Replace with your actual EmailJS keys:
+const SERVICE_ID = "your_service_id"
+const TEMPLATE_ID = "your_template_id"
+const USER_ID = "your_public_key"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -19,7 +24,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -28,14 +33,16 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
+      setSubmitSuccess(true)
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    } catch (error) {
+      console.error("EmailJS Error:", error)
+      alert("Failed to send message. Please try again later.")
+    }
 
     setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", email: "", subject: "", message: "" })
-
-    // Reset success message after 5 seconds
     setTimeout(() => {
       setSubmitSuccess(false)
     }, 5000)
@@ -170,20 +177,19 @@ export default function ContactPage() {
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">
                     Subject
                   </label>
-                 <select
-  id="subject"
-  name="subject"
-  value={formData.subject}
-  onChange={handleChange}
-  required
-  className="w-full border rounded-md px-3 py-2 text-sm"
->
-  <option value="" disabled>Select a subject</option>
-  <option value="Suggestions">Suggestions</option>
-  <option value="Confessions">Confessions</option>
-  <option value="Queries">Queries</option>
-</select>
-
+                  <select
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full border rounded-md px-3 py-2 text-sm"
+                  >
+                    <option value="" disabled>Select a subject</option>
+                    <option value="Suggestions">Suggestions</option>
+                    <option value="Confessions">Confessions</option>
+                    <option value="Queries">Queries</option>
+                  </select>
                 </div>
 
                 <div>
@@ -221,7 +227,6 @@ export default function ContactPage() {
           </div>
 
           <div className="h-[400px] rounded-xl overflow-hidden shadow-lg">
-            {/* Replace with actual map component or iframe */}
             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
               <p className="text-muted-foreground">Map will be displayed here</p>
             </div>
