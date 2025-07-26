@@ -9,9 +9,9 @@ import { Mail, MapPin, Phone } from "lucide-react"
 import emailjs from "emailjs-com"
 
 // ✅ Replace with your actual EmailJS keys:
-const SERVICE_ID = "your_service_id"
-const TEMPLATE_ID = "your_template_id"
-const USER_ID = "your_public_key"
+const SERVICE_ID = "service_vd0ii0q"
+const TEMPLATE_ID = "template_oyw8f12"
+const USER_ID = "hCjvfCDEpONRdKs2B"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
