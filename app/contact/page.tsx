@@ -170,14 +170,20 @@ export default function ContactPage() {
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">
                     Subject
                   </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="Inquiry about E-cell"
-                  />
+                 <select
+  id="subject"
+  name="subject"
+  value={formData.subject}
+  onChange={handleChange}
+  required
+  className="w-full border rounded-md px-3 py-2 text-sm"
+>
+  <option value="" disabled>Select a subject</option>
+  <option value="Suggestions">Suggestions</option>
+  <option value="Confessions">Confessions</option>
+  <option value="Queries">Queries</option>
+</select>
+
                 </div>
 
                 <div>
