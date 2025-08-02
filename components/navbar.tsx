@@ -60,9 +60,6 @@ const Navbar = () => {
           <Link href="/contact" className="font-medium text-foreground/80 hover:text-primary transition-colors">
             Contact
           </Link>
-          <Button variant="default" size="sm">
-            Login
-          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -93,9 +90,6 @@ const Navbar = () => {
           <Link href="/contact" className="font-medium py-2 border-b border-border" onClick={() => setIsOpen(false)}>
             Contact
           </Link>
-          <Button variant="default" size="sm" className="mt-2">
-            Login
-          </Button>
         </div>
       </div>
     </header>
