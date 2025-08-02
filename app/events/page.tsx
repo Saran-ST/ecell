@@ -9,7 +9,8 @@ const events = [
     id: 1,
     title: "Entrepreneurship Workshop",
     category: "Workshop",
-    description: "A comprehensive workshop on entrepreneurship basics, business model canvas, and pitching techniques for aspiring entrepreneurs.",
+    description:
+      "A comprehensive workshop on entrepreneurship basics, business model canvas, and pitching techniques for aspiring entrepreneurs.",
     date: "March 15, 2023",
     location: "Main Auditorium, SVCE",
     participants: "120 Participants",
@@ -20,27 +21,104 @@ const events = [
     id: 2,
     title: "Startup Pitch Competition",
     category: "Competition",
-    description: "Students presented their innovative startup ideas to the panel of judges from the industry. Cash prizes and mentorship opportunities were awarded.",
+    description:
+      "Students presented their innovative startup ideas to the panel of judges from the industry. Cash prizes and mentorship opportunities were awarded.",
     date: "February 28, 2023",
     location: "Seminar Hall, SVCE",
     participants: "50 Teams",
     image: "/placeholder.svg?height=600&width=800",
     color: "secondary",
-  }
+  },
+  {
+    id: 3,
+    title: "Industry Expert Talk Series",
+    category: "Seminar",
+    description:
+      "A series of talks by industry experts sharing their entrepreneurial journey, challenges faced, and insights on building successful startups.",
+    date: "January 10, 2023",
+    location: "Virtual Event",
+    participants: "200+ Attendees",
+    image: "/placeholder.svg?height=600&width=800",
+    color: "accent",
+  },
+  {
+    id: 4,
+    title: "Hackathon 2023",
+    category: "Competition",
+    description:
+      "A 24-hour coding marathon where participants worked on innovative solutions to real-world problems. Prizes were awarded for the best solutions.",
+    date: "December 5, 2022",
+    location: "Computer Science Block, SVCE",
+    participants: "30 Teams",
+    image: "/placeholder.svg?height=600&width=800",
+    color: "primary",
+  },
+  {
+    id: 5,
+    title: "Business Plan Workshop",
+    category: "Workshop",
+    description:
+      "An interactive workshop on creating effective business plans, financial projections, and market analysis for startups.",
+    date: "November 20, 2022",
+    location: "MBA Department, SVCE",
+    participants: "80 Participants",
+    image: "/placeholder.svg?height=600&width=800",
+    color: "secondary",
+  },
+  {
+    id: 6,
+    title: "E-Summit 2022",
+    category: "Conference",
+    description:
+      "Annual entrepreneurship summit featuring keynote speeches, panel discussions, workshops, and networking opportunities with industry leaders.",
+    date: "October 15-16, 2022",
+    location: "SVCE Campus",
+    participants: "500+ Attendees",
+    image: "/placeholder.svg?height=600&width=800",
+    color: "accent",
+  },
 ]
 
-const participants = [
-  { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
-  { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
-  { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
-  { id: 4, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
-  { id: 5, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
-  { id: 6, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
-  { id: 7, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
-  { id: 8, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
-  { id: 9, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
-  { id: 10, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" }
-]
+// Different participant tables for each event
+const participantsData: Record<number, { id: number; name: string; class: string; idea: string; description: string }[]> = {
+  1: [
+    { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
+    { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
+    { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
+    { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
+    { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
+    { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
+    { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
+    { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
+    { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
+    { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
+    { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
+    { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
+    { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
+    { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
+    { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
+    { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
+    { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
+    { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
+    { id: 1, name: "pqr", class: "CSE IV", idea: "Smart Farming", description: "AI-driven crop monitoring system" },
+    { id: 2, name: "Abcd", class: "IT III", idea: "E-Commerce App", description: "Next-gen shopping experience" },
+    { id: 3, name: "xyz", class: "ECE II", idea: "Drone Delivery", description: "Drone-based parcel delivery system" },
+  ],
+  2: [
+    { id: 1, name: "Rohan", class: "CSE III", idea: "Blockchain Voting", description: "Decentralized secure voting platform" },
+    { id: 2, name: "Meera", class: "IT II", idea: "Health Tracker", description: "AI-powered health analytics" },
+  ],
+  3: [], // No participants
+  4: [
+    { id: 1, name: "Amit", class: "CSE IV", idea: "Food Waste App", description: "App to redistribute excess food" },
+  ],
+  5: [
+    { id: 1, name: "Sneha", class: "MBA I", idea: "Startup Funding Portal", description: "Investor and startup matching platform" },
+  ],
+  6: [
+    { id: 1, name: "Karthik", class: "ECE III", idea: "Green Energy", description: "IoT-based solar energy optimizer" },
+  ],
+}
 
 export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null)
@@ -61,58 +139,65 @@ export default function EventsPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="space-y-16">
-            {events.map((event, index) => (
-              <div
-                key={event.id}
-                className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? "" : "md:grid-flow-dense"}`}
-              >
-                <div className={index % 2 === 0 ? "order-2 md:order-1" : "order-2"}>
-                  <div className="p-6">
-                    <span className={`inline-block px-3 py-1 bg-${event.color}/10 text-${event.color} rounded-full text-sm font-medium mb-4`}>
-                      {event.category}
-                    </span>
-                    <h3 className="text-2xl font-bold mb-4">{event.title}</h3>
-                    <p className="text-muted-foreground mb-6">{event.description}</p>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-                      <div className="flex items-center gap-2">
-                        <Calendar size={18} className="text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">{event.date}</span>
+            {events.map((event, index) => {
+              const eventParticipants = participantsData[event.id] || []
+              return (
+                <div
+                  key={event.id}
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? "" : "md:grid-flow-dense"}`}
+                >
+                  <div className={index % 2 === 0 ? "order-2 md:order-1" : "order-2"}>
+                    <div className="p-6">
+                      <span className={`inline-block px-3 py-1 bg-${event.color}/10 text-${event.color} rounded-full text-sm font-medium mb-4`}>
+                        {event.category}
+                      </span>
+                      <h3 className="text-2xl font-bold mb-4">{event.title}</h3>
+                      <p className="text-muted-foreground mb-6">{event.description}</p>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+                        <div className="flex items-center gap-2">
+                          <Calendar size={18} className="text-muted-foreground" />
+                          <span className="text-sm text-muted-foreground">{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin size={18} className="text-muted-foreground" />
+                          <span className="text-sm text-muted-foreground">{event.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Users size={18} className="text-muted-foreground" />
+                          <span className="text-sm text-muted-foreground">{event.participants}</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin size={18} className="text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">{event.location}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Users size={18} className="text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">{event.participants}</span>
-                      </div>
+                      <Button
+                        variant={eventParticipants.length > 0 ? (event.color as "default" | "secondary" | "accent") : "outline"}
+                        disabled={eventParticipants.length === 0}
+                        onClick={() => eventParticipants.length > 0 && setSelectedEvent(event.id)}
+                      >
+                        View Participant Details
+                      </Button>
                     </div>
-                    <Button variant={event.color as "default" | "secondary" | "accent"} onClick={() => setSelectedEvent(event.id)}>
-                      View Details
-                    </Button>
+                  </div>
+                  <div className={index % 2 === 0 ? "order-1 md:order-2" : "order-1"}>
+                    <div className="event-card overflow-hidden rounded-xl shadow-lg">
+                      <Image
+                        src={event.image || "/placeholder.svg"}
+                        alt={event.title}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover aspect-video"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className={index % 2 === 0 ? "order-1 md:order-2" : "order-1"}>
-                  <div className="event-card overflow-hidden rounded-xl shadow-lg">
-                    <Image
-                      src={event.image || "/placeholder.svg"}
-                      alt={event.title}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover aspect-video"
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Participants Modal */}
-      {selectedEvent !== null && (
+      {selectedEvent !== null && participantsData[selectedEvent]?.length > 0 && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-          <div className="bg-white rounded-xl shadow-lg p-6 w-[90%] max-w-2xl h-[70%] relative flex flex-col">
+          <div className="bg-white rounded-xl shadow-lg p-6 w-[95%] max-w-4xl h-[80%] relative flex flex-col">
             <button
               onClick={() => setSelectedEvent(null)}
               className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm"
@@ -134,7 +219,7 @@ export default function EventsPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {participants.map((p) => (
+                  {participantsData[selectedEvent].map((p) => (
                     <tr key={p.id}>
                       <td className="p-2 border">{p.id}</td>
                       <td className="p-2 border">{p.name}</td>
